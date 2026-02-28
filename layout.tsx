@@ -1,25 +1,9 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
+import AppShell from "@/components/AppShell";
 
-export const metadata: Metadata = {
-  title: "FINANSE MAGAZYNU",
-  description: "Cashflow Core v1 — zarządcze finanse jednoosobowej działalności",
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  themeColor: "#0a0a0a",
-};
-
-export default function RootLayout({
+export default function AuthenticatedLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="pl">
-      <body className="min-h-screen">{children}</body>
-    </html>
-  );
+  return <AppShell>{children}</AppShell>;
 }
